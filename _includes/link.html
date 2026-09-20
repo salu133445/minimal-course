@@ -1,0 +1,10 @@
+<a class="icon-link" href="{{ include.link }}" {% if include.style %}style="{{ include.style }}"{% endif %} {% if include.newtab %}target="_blank"{% endif %}><nobr>
+{%- if site.data.icons[include.icon] -%}
+<i class="{{ site.data.icons[include.icon] }}"></i>
+{%- else -%}
+<i class="{{ site.data.icons['link'] }}"></i>
+{%- endif -%}
+{%- if include.text -%}
+<span class="icon-text"> {{ include.text }}</span>
+{%- endif -%}
+</nobr></a>

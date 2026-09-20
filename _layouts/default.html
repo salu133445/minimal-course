@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% if site.favicon %}
+    <link rel="icon" type="image/x-icon" href="{{ site.favicon | relative_url }}">
+    {% endif %}
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    {% if site.mathjax %}
+    {% include mathjax.html %}
+    {% endif %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        {%if page.title %}
+        <h1 class="title">{{ page.title }}</h1>
+        {% endif %}
+        {% if site.homepage_name and page.url != "/" and page.url != "/index.html" %}
+        <p class="subtitle"><a class="hidden" href="{{ "/" | absolute_url }}">{{ page.homepage_name | default: site.homepage_name }}</a></p>
+        {% endif %}
+        <button class="mode-toggle">
+          <span class="dark-mode"><i class="fa-solid fa-moon fa-fw"></i><span class="mode-text"> Dark mode</span></span>
+          <span class="light-mode"><i class="fa-solid fa-sun fa-fw"></i><span class="mode-text"> Light mode</span></span>
+        </button>
+      </div class="header">
+
+      {{ content }}
+
+      <hr>
+      <div class="footer">
+        <p>
+          Hosted on GitHub Pages. Powered by <a href="http://jekyllrb.com">Jekyll</a>.
+          Theme based on <a href="https://github.com/salu133445/minimal-course">Minimal Course</a> by <a href="https://github.com/salu133445">Hao-Wen Dong</a>, which is based on <a href="https://github.com/orderedlist/minimal">minimal</a> by <a href="https://github.com/orderedlist">orderedlist.</a>
+        </p>
+      </div>
+    </div>
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <script>
+      // Get theme from local storage or system preference
+      var theme = localStorage.getItem('theme');
+      if (!theme) {
+        theme = (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      }
+      // Set theme
+      if (theme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+      // Listen for a click on the button
+      const btn = document.querySelector(".mode-toggle");
+      btn.addEventListener("click", function() {
+        theme = document.documentElement.getAttribute("data-theme");
+        var targetTheme = (theme === "dark") ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", targetTheme);
+        localStorage.setItem("theme", targetTheme);
+      });
+      // Listen for a print event
+      window.addEventListener("beforeprint", function() {
+        theme = document.documentElement.getAttribute("data-theme");
+        localStorage.setItem("theme", theme);
+        document.documentElement.setAttribute("data-theme", "light");
+      });
+      window.addEventListener("afterprint",  function() {
+        theme = localStorage.getItem("theme");
+        document.documentElement.setAttribute("data-theme", theme);
+      });
+    </script>
+  </body>
+</html>

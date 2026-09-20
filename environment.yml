@@ -1,0 +1,6 @@
+name: minimal-course
+channels:
+  - conda-forge
+dependencies:
+  - ruby
+  - compilers

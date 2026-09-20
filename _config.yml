@@ -1,0 +1,10 @@
+# Title of your course website
+title: Minimal Course
+# Short description of your course website
+description: A minimal theme for course websites
+# Name of the homepage. (Will be displayed as a link on subpages; leave it blank to disable the subtitle)
+homepage_name: "MIN 101: Minimal Course (Fall 2026)"
+# Whether to enable MathJax support
+mathjax: true
+# Path to the favicon (Leave it blank to disable the favicon)
+favicon: /favicon.ico

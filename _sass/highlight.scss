@@ -1,0 +1,76 @@
+.highlight {
+    background: var(--weak-bg-color)
+}
+
+.highlight .hll {
+    background-color: var(--weak-bg-color)
+}
+
+// Comments
+.highlight .c,
+.highlight .ch,
+.highlight .cm,
+.highlight .cp,
+.highlight .cpf,
+.highlight .c1,
+.highlight .cs {
+    color: var(--highlight-comment-color)
+}
+
+// Keywords
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr {
+    color: var(--highlight-keyword-color)
+}
+
+.highlight .kt {
+    color: var(--highlight-keyword-type-color)
+}
+
+// Names
+.highlight .na,
+.highlight .nb,
+.highlight .nf,
+.highlight .nn {
+    color: var(--highlight-name-color)
+}
+
+.highlight .nc {
+    color: var(--highlight-name-class-color)
+}
+
+.highlight .bp {
+    color: var(--highlight-name-builtin-pseudo-color)
+}
+
+// Numbers
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo {
+    color: var(--highlight-number-color)
+}
+
+// Strings
+.highlight .s,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .s2,
+.highlight .s1,
+.highlight .sh,
+.highlight .se,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .ss {
+    color: var(--highlight-string-color)
+}
